@@ -1,9 +1,12 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
+import { useContext, useState } from "react";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import Form from "react-bootstrap/Form";
-import { useState } from "react";
 
 export const SignIn = () => {
+  const { login } = useContext(AuthContext);
+
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -20,12 +23,7 @@ export const SignIn = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    if (formData.username === "toto" && formData.password === "12345") {
-      console.log("login");
-    } else {
-      console.log("identifiants incorrect");
-    }
+    login(formData);
   };
 
   return (
