@@ -3,8 +3,11 @@ import { useContext, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import Form from "react-bootstrap/Form";
+import { useNavigate } from "react-router";
 
 export const SignIn = () => {
+  const navigate = useNavigate();
+
   const { login } = useContext(AuthContext);
 
   const [formData, setFormData] = useState({
@@ -21,9 +24,11 @@ export const SignIn = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    login(formData);
+    await login(formData).then(() => {
+      navigate("/");
+    });
   };
 
   return (

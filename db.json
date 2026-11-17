@@ -103,5 +103,12 @@
       "isAdmin": true
     }
   ],
+  "users": [
+    {
+      "id": 1,
+      "username": "toto",
+      "password": 1234
+    }
+  ],
   "$schema": "./node_modules/json-server/schema.json"
 }

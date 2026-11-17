@@ -1,9 +1,17 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [connectedUser, setConnectedUser] = useState(null);
+
+	useEffect(() => {
+    if (connectedUser) {
+      localStorage.setItem("user", JSON.stringify(connectedUser));
+    } else {
+      localStorage.removeItem("user");
+    }
+  }, [connectedUser]);
 
   const login = async (credentials) => {
     if (credentials.username === "toto" && credentials.password === "12345") {
