@@ -32,11 +32,11 @@ export const SignIn = () => {
         <Col>
           <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formGroupUsername">
-              <Form.Label>Nom d'utilisateur</Form.Label>
+              <Form.Label>Nom</Form.Label>
               <Form.Control
                 type="text"
                 name="username"
-                placeholder="Entrer un nom d'utilisateur"
+                placeholder="Entrer votre nom"
                 value={formData.username}
                 onChange={handleChange}
               />
