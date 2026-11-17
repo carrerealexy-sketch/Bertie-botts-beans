@@ -1,0 +1,107 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "10 Beans goût poubelle",
+      "description": "Délicieux beans goût poubelle",
+      "price": 1,
+      "stock": 17,
+      "image": "https://placehold.co/250x400"
+    },
+    {
+      "id": "2",
+      "name": "Boîte de Beans mystère",
+      "description": "Laicez-vous surprendre par notre boîte de beans mystère !",
+      "price": 3,
+      "stock": 8,
+      "image": "https://placehold.co/250x400"
+    },
+    {
+      "id": "3",
+      "name": "Boîte de Beans goût poubelle",
+      "description": "Délicieux beans goût poubelle",
+      "price": 3,
+      "stock": 5,
+      "image": "https://placehold.co/250x400"
+    },
+    {
+      "id": "4",
+      "name": "10 Beans goût gazon",
+      "description": "Délicieux beans goût gazon",
+      "price": 1,
+      "stock": 10,
+      "image": "https://placehold.co/250x400"
+    },
+    {
+      "id": "5",
+      "name": "Super boîte de Beans mystère",
+      "description": "Laicez-vous surprendre par notre superboîte de beans mystère !",
+      "price": 10,
+      "stock": 2,
+      "image": "https://placehold.co/250x400"
+    }
+  ],
+  "vendeurs": [
+    {
+      "id": "1",
+      "name": "Georges Weasley",
+      "Beans_stock": [
+        {
+          "id_beans": "5",
+          "stock": 1
+        },
+        {
+          "id_beans": "2",
+          "stock": 2
+        }
+      ],
+      "image": "https://placehold.co/400x250"
+    },
+    {
+      "id": "2",
+      "name": "Fred Weasley",
+      "Beans_stock": [
+        {
+          "id_beans": "5",
+          "stock": 1
+        },
+        {
+          "id_beans": "1",
+          "stock": 6
+        },
+        {
+          "id_beans": "3",
+          "stock": 2
+        }
+      ],
+      "image": "https://placehold.co/400x250"
+    }
+  ],
+  "Comptes": [
+    {
+      "id": "1",
+      "name": "Harry Potter",
+      "password": "password123",
+      "isAdmin": false
+    },
+    {
+      "id": "2",
+      "name": "Neville Londubat",
+      "password": "password123",
+      "isAdmin": false
+    },
+    {
+      "id": "3",
+      "name": "Agridd",
+      "password": "password123",
+      "isAdmin": false
+    },
+    {
+      "id": "4",
+      "name": "George Weasley",
+      "password": "password123",
+      "isAdmin": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
