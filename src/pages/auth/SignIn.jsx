@@ -1,4 +1,5 @@
 import { BadgeCheck, Lock, UserRound } from "lucide-react";
+import { Navigate, useLocation, useNavigate } from "react-router";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { AuthFormHeader } from "../../components/ui/form/auth-form-header";
@@ -9,11 +10,14 @@ import { ROUTES } from "../../constants";
 import { signinValidation } from "../../validation/auth-validation";
 import { use } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router";
 
 export const SignIn = () => {
   const navigate = useNavigate();
-  const { login } = use(AuthContext);
+  const location = useLocation();
+
+  const { login, connectedUser } = use(AuthContext);
+
+  const redirectTo = location.state?.from?.pathname || ROUTES.DASHBOARD.ROOT;
 
   const {
     register,
@@ -29,12 +33,21 @@ export const SignIn = () => {
   const onSubmit = async (formData) => {
     const success = await login(formData);
 
+    const redirectTo =
+      location.state?.from?.pathname ||
+      sessionStorage.getItem("previousPage") ||
+      ROUTES.DASHBOARD.ROOT;
+
     if (success) {
-      navigate(ROUTES.DASHBOARD.ROOT);
+      navigate(redirectTo, { replace: true });
     } else {
       console.log("Identifiants incorrects");
     }
   };
+
+  if (connectedUser) {
+    return <Navigate to={redirectTo} replace />;
+  }
 
   return (
     <div className="relative w-full max-w-[440px] flex flex-col items-center rounded-2xl">
@@ -70,7 +83,7 @@ export const SignIn = () => {
             loading={isSubmitting}
             loadingText="Ouverture du grimoire..."
           >
-            Entrer dans l'Atelier
+            Se connecter
           </FormButton>
         </form>
 
@@ -79,11 +92,6 @@ export const SignIn = () => {
           label="Créer un compte"
           to={ROUTES.AUTH.REGISTER}
         />
-      </div>
-
-      <div className="mt-4 flex items-center gap-2 text-secondary font-label-sm select-none text-center">
-        <BadgeCheck />
-        <span>Authentification certifiée</span>
       </div>
     </div>
   );
