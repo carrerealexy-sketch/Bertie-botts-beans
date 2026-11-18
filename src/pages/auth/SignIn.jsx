@@ -2,6 +2,7 @@ import { Button, Col, Container, Row } from "react-bootstrap";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import Form from "react-bootstrap/Form";
+import { ROUTES } from "../../constants";
 import { use } from "react";
 import { useNavigate } from "react-router";
 import { useState } from "react";
@@ -30,7 +31,7 @@ export const SignIn = () => {
     const success = await login(formData);
 
     if (success) {
-      navigate("/dashboard");
+      navigate(ROUTES.DASHBOARD.ROOT);
     } else {
       console.log("Identifiants incorrects");
     }

@@ -111,7 +111,7 @@
     },
     {
       "username": "john",
-      "password": "12345",
+      "password": 12345,
       "id": "XgQ2vI4zlTs"
     }
   ],

@@ -2,6 +2,7 @@ import { Button, Container, Form } from "react-bootstrap";
 import { useContext, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { ROUTES } from "../../constants";
 import { useNavigate } from "react-router";
 
 export const SignUp = () => {
@@ -28,7 +29,7 @@ export const SignUp = () => {
     const success = await signup(formData);
 
     if (success) {
-      navigate("/dashboard");
+      navigate(ROUTES.DASHBOARD.ROOT);
     } else {
       console.log("Erreur lors de l'inscription");
     }
