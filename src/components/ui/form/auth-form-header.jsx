@@ -1,11 +1,11 @@
 export const AuthFormHeader = ({ title }) => {
   return (
-    <div className="flex flex-col items-center text-center pb-6">
-      <div className="w-12 h-12 rounded-xl bg-primary-container flex items-center justify-center shadow-md mb-4 transition-transform duration-300 hover:scale-105">
-        <span className="font-headline-md text-headline-md text-on-primary font-bold leading-none select-none">
-          logo
-        </span>
-      </div>
+    <div className="flex flex-col items-center gap-4 text-center pb-6">
+      <img
+        src="https://ih1.redbubble.net/image.2091716728.5254/st,small,845x845-pad,1000x1000,f8f8f8.jpg"
+        alt="Logo Bertie Bott"
+        className="w-full max-w-[175px] rounded-full"
+      />
 
       <h1 className="font-headline-md text-headline-md text-on-surface tracking-tight">
         {title}

@@ -1,4 +1,4 @@
-import { BadgeCheck, Lock, UserRound } from "lucide-react";
+import { Lock, UserRound } from "lucide-react";
 import { Navigate, useLocation, useNavigate } from "react-router";
 
 import { AuthContext } from "../../contexts/AuthContext";

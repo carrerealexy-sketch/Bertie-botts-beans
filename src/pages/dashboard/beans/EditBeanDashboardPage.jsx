@@ -4,7 +4,7 @@ import { Link, useNavigate, useParams } from "react-router";
 import { getProductById, updateProduct } from "../../../service/productService";
 import { useEffect, useState } from "react";
 
-import { BeanForm } from "../../../components/form/BeanForm";
+import { DashboardFormLayout } from "../../../layout/DashboardFormLayout";
 import NavBar from "../../../components/NavBar";
 import { ROUTES } from "../../../constants";
 
@@ -34,7 +34,7 @@ export const EditBeanDashboardPage = () => {
 
   const handleSubmit = async (formData) => {
     await updateProduct(beanId, formData);
-    navigate("/beans");
+    navigate(ROUTES.BEANS);
   };
 
   if (isLoading) {
@@ -68,25 +68,13 @@ export const EditBeanDashboardPage = () => {
   return (
     <>
       <NavBar />
-
-      <main className="add-bean-page">
-        <section className="add-bean-card" aria-labelledby="add-bean-title">
-          <Link className="add-bean-back" to={ROUTES.BEANS}>
-            <span aria-hidden="true">←</span> Retour aux produits
-          </Link>
-          <header className="add-bean-header">
-            <p className="add-bean-eyebrow">Catalogue</p>
-            <h1 id="add-bean-title">Ajouter un produit</h1>
-            <p>Renseignez les informations du nouveau produit.</p>
-          </header>
-
-          <BeanForm
-            initialData={bean}
-            onSubmit={handleSubmit}
-            submitLabel="Enregistrer les modifications"
-          />
-        </section>
-      </main>
+      <DashboardFormLayout
+        title="Modifier un produit"
+        description="Renseignez les informations pour modifier le produit."
+        onSubmit={handleSubmit}
+        submitLabel="Enregistrer les modifications"
+        initialData={bean}
+      />
     </>
   );
 };

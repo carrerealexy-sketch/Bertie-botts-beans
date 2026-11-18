@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-
 import { InputNumber } from "../ui/form/bean/inputNumber";
 import { InputText } from "../ui/form/bean/inputText";
 import { Textarea } from "../ui/form/bean/Textarea";
+import { useState } from "react";
 
 const INITIAL_PRODUCT = {
   name: "",
@@ -18,21 +17,13 @@ export const BeanForm = ({
   onSubmit,
   submitLabel = "Enregistrer",
 }) => {
-  const [product, setProduct] = useState({
+  const [product, setProduct] = useState(() => ({
     ...INITIAL_PRODUCT,
     ...initialData,
-  });
+  }));
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState(null);
-
-  // Mettre à jour les champs lorsque les données arrivent
-  useEffect(() => {
-    setProduct({
-      ...INITIAL_PRODUCT,
-      ...initialData,
-    });
-  }, [initialData]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -45,6 +36,7 @@ export const BeanForm = ({
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     setIsSubmitting(true);
     setFeedback(null);
 
