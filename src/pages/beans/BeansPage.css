@@ -1,7 +1,6 @@
 .bean-search {
   display: flex;
   justify-content: flex-end;
-  margin-bottom: 1rem;
 }
 
 .bean-search-input {
@@ -59,7 +58,6 @@
   color: #b96f00;
   font-size: 1.25rem;
   font-weight: 700;
-
 }
 
 .bean-card-stock {

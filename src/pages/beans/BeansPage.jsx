@@ -1,6 +1,7 @@
 import "./BeansPage.css";
 
-import { Pencil, Trash } from "lucide-react";
+import { ArrowLeft, ArrowRight, Pencil, Plus, Trash } from "lucide-react";
+import { Link, useNavigate } from "react-router";
 import getProducts, { deleteProduct } from "../../service/productService";
 import { useEffect, useState } from "react";
 
@@ -8,7 +9,6 @@ import { DeleteModal } from "../../components/ui/modal/DeleteModal";
 import FiltreBar from "../../components/FiltreBar";
 import NavBar from "../../components/NavBar";
 import { ROUTES } from "../../constants";
-import { useNavigate } from "react-router";
 
 const PRODUCTS_PER_PAGE = 6;
 
@@ -103,22 +103,30 @@ export const BeansPage = () => {
     <>
       <NavBar />
       <div className="container mt-5">
-        <div className="bean-search">
-          <label className="visually-hidden" htmlFor="bean-search-input">
-            Rechercher un produit
-          </label>
-          <input
-            id="bean-search-input"
-            className="form-control bean-search-input"
-            type="search"
-            placeholder="Rechercher un produit..."
-            value={searchTerm}
-            onChange={(event) => {
-              setSearchTerm(event.target.value);
-              setCurrentPage(1);
-            }}
-          />
-        </div>
+        <fiv className="flex justify-end gap-2 mb-4">
+          <Link
+            to={ROUTES.DASHBOARD.BEANS.ADD}
+            className="btn btn-primary flex items-center justify-center gap-2"
+          >
+            <Plus />
+          </Link>
+          <div className="bean-search">
+            <label className="visually-hidden" htmlFor="bean-search-input">
+              Rechercher un produit
+            </label>
+            <input
+              id="bean-search-input"
+              className="form-control bean-search-input"
+              type="search"
+              placeholder="Rechercher un produit..."
+              value={searchTerm}
+              onChange={(event) => {
+                setSearchTerm(event.target.value);
+                setCurrentPage(1);
+              }}
+            />
+          </div>
+        </fiv>
         <div className="bean-catalog-layout">
           <FiltreBar
             category={category}
@@ -146,8 +154,8 @@ export const BeansPage = () => {
           <div className="bean-catalog-results">
             <div className="row gy-4 bean-product-grid">
               {currentProducts.map((product) => {
-								console.log(product);
-								
+                console.log(product);
+
                 return (
                   <div
                     className="relative col-12 col-sm-6 col-lg-4"
