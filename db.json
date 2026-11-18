@@ -6,7 +6,7 @@
       "description": "Délicieux beans goût poubelle",
       "price": 1,
       "stock": 17,
-      "image": "https://placehold.co/250x400"
+      "image": "https://placehold.co/250x300"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "description": "Laicez-vous surprendre par notre boîte de beans mystère !",
       "price": 3,
       "stock": 8,
-      "image": "https://placehold.co/250x400"
+      "image": "https://placehold.co/250x300"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "description": "Délicieux beans goût poubelle",
       "price": 3,
       "stock": 5,
-      "image": "https://placehold.co/250x400"
+      "image": "https://placehold.co/250x300"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "description": "Délicieux beans goût gazon",
       "price": 1,
       "stock": 10,
-      "image": "https://placehold.co/250x400"
+      "image": "https://placehold.co/250x300"
     },
     {
       "id": "5",
@@ -38,7 +38,7 @@
       "description": "Laicez-vous surprendre par notre superboîte de beans mystère !",
       "price": 10,
       "stock": 2,
-      "image": "https://placehold.co/250x400"
+      "image": "https://placehold.co/250x300"
     }
   ],
   "vendeurs": [
