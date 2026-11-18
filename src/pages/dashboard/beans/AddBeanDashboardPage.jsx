@@ -97,7 +97,7 @@ export const AddBeanDashboardPage = () => {
               name='price'
               type='number'
               min='0'
-              step='0.01'
+              step='1'
               value={product.price}
               onChange={handleChange}
               required

@@ -20,7 +20,7 @@ function NavBar() {
             </Link>
           </li>
           <li className='nav-item'>
-            <Link className='nav-link' to='/beans'>
+            <Link className='nav-link' to='/sellers'>
               Vendeur
             </Link>
           </li>

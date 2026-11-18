@@ -64,6 +64,7 @@ export const BeansPage = () => {
     <>
       <NavBar />
       <div className='container mt-5'>
+        <h1 className='seller-catalog-title'>Notre catalogue</h1>
         <div className='bean-search'>
           <label className='visually-hidden' htmlFor='bean-search-input'>
             Rechercher un produit
