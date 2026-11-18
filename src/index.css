@@ -1,1 +1,9 @@
+body {
+  background-image: url("https://png.pngtree.com/background/20250415/original/pngtree-red-and-gold-luxury-background-picture-image_16440327.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #111111;
+}
 @import "tailwindcss";

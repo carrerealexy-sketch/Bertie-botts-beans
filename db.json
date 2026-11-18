@@ -6,7 +6,7 @@
       "description": "Délicieux beans goût poubelle",
       "price": 1,
       "stock": 17,
-      "image": "https://placehold.co/250x400"
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     },
     {
       "id": "2",
@@ -14,7 +14,7 @@
       "description": "Laicez-vous surprendre par notre boîte de beans mystère !",
       "price": 3,
       "stock": 8,
-      "image": "https://placehold.co/250x400"
+      "image": "https://m.media-amazon.com/images/I/71ADjBAo7fL._AC_UF1000,1000_QL80_.jpg"
     },
     {
       "id": "3",
@@ -22,7 +22,7 @@
       "description": "Délicieux beans goût poubelle",
       "price": 3,
       "stock": 5,
-      "image": "https://placehold.co/250x400"
+      "image": "https://m.media-amazon.com/images/I/71QSa3iWYbL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg"
     },
     {
       "id": "4",
@@ -30,7 +30,7 @@
       "description": "Délicieux beans goût gazon",
       "price": 1,
       "stock": 10,
-      "image": "https://placehold.co/250x400"
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     },
     {
       "id": "5",
@@ -38,7 +38,31 @@
       "description": "Laicez-vous surprendre par notre superboîte de beans mystère !",
       "price": 10,
       "stock": 2,
-      "image": "https://placehold.co/250x400"
+      "image": "https://www.yourwdwstore.net/assets/images/9/90000/0000/800/90805.jpg"
+    },
+    {
+      "id": "6",
+      "name": "10 Beans goût Semelle",
+      "description": "Délicieux beans goût gazon",
+      "price": 1,
+      "stock": 10,
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
+    },
+    {
+      "id": "7",
+      "name": "10 Beans goût Argus Rusard",
+      "description": "Délicieux beans goût gazon",
+      "price": 1,
+      "stock": 10,
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
+    },
+    {
+      "id": "8",
+      "name": "10 Beans goût barbe de Dumbledore",
+      "description": "Délicieux beans goût gazon",
+      "price": 1,
+      "stock": 10,
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     }
   ],
   "vendeurs": [
