@@ -33,3 +33,16 @@ export async function getProductById(id) {
 
     return await response.json()
 }
+
+
+export async function deleteProduct(id) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "DELETE",
+  });
+
+  if (!response.ok) {
+    throw new Error("Erreur lors de la suppression du produit");
+  }
+
+  return true;
+}

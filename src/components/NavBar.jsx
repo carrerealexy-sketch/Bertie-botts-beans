@@ -1,20 +1,13 @@
 import "./NavBar.css";
 
-import { Link, useNavigate } from "react-router";
 import { LogIn, LogOut } from "lucide-react";
 
-import { AuthContext } from "../contexts/AuthContext";
+import { Link } from "react-router";
 import { ROUTES } from "../constants";
-import { use } from "react";
+import { useAuth } from "../hooks/use-auth";
 
 function NavBar() {
-  const navigate = useNavigate();
-  const { connectedUser, logout } = use(AuthContext);
-
-  const handleLogout = () => {
-    logout();
-    navigate(ROUTES.SIGNIN);
-  };
+  const { handleLogout, connectedUser } = useAuth();
 
   return (
     <nav className="navbar navbar-expand site-navbar flex justify-between">
