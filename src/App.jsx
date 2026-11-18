@@ -11,6 +11,7 @@ import { EditSellerDashboardPage } from "./pages/dashboard/sellers/EditSellerDas
 import { Home } from "./pages/Home";
 import { HomeDashboardPage } from "./pages/dashboard/HomeDashboardPage";
 import { NotFound } from "./pages/error/NotFound";
+import { ProtectedRoute } from "./components/ProtectedRoute";
 import { ROUTES } from "./constants";
 import { SellerPage } from "./pages/sellers/SellersPage";
 import { SellersDashboardPage } from "./pages/dashboard/sellers/SellersDashboardPage";
@@ -30,7 +31,14 @@ export const App = () => {
           <Route path={ROUTES.AUTH.REGISTER} element={<SignUp />} />
         </Route>
 
-        <Route path={ROUTES.DASHBOARD.ROOT} element={<DashboardLayout />}>
+        <Route
+          path={ROUTES.DASHBOARD.ROOT}
+          element={
+            <ProtectedRoute>
+              <DashboardLayout />
+            </ProtectedRoute>
+          }
+        >
           <Route index element={<HomeDashboardPage />} />
 
           <Route path={ROUTES.DASHBOARD.BEANS.ROOT}>
