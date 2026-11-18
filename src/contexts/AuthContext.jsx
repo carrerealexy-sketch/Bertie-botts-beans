@@ -4,7 +4,11 @@ import { register, login as signin } from "../services/auth-service";
 export const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
-  const [connectedUser, setConnectedUser] = useState(null);
+  const [connectedUser, setConnectedUser] = useState(() => {
+    const storedUser = localStorage.getItem("user");
+
+    return storedUser ? JSON.parse(storedUser) : null;
+  });
 
   useEffect(() => {
     if (connectedUser) {
@@ -20,8 +24,9 @@ export const AuthProvider = ({ children }) => {
 
       if (!user) return false;
 
-      setConnectedUser(user);
-      localStorage.setItem("user", JSON.stringify(user));
+      const { ...userWithoutPassword } = user;
+
+      setConnectedUser(userWithoutPassword);
 
       return true;
     } catch (error) {
@@ -33,6 +38,8 @@ export const AuthProvider = ({ children }) => {
   const signup = async (userData) => {
     try {
       const user = await register(userData);
+
+      if (!user) return false;
 
       const { ...userWithoutPassword } = user;
 
@@ -47,7 +54,6 @@ export const AuthProvider = ({ children }) => {
 
   const logout = () => {
     try {
-      localStorage.removeItem("user");
       setConnectedUser(null);
       return true;
     } catch (error) {

@@ -23,8 +23,22 @@ export const App = () => {
     <>
       <Routes>
         <Route path={ROUTES.HOME} element={<Home />} />
-        <Route path={ROUTES.BEANS} element={<BeansPage />} />
-        <Route path={ROUTES.SELLERS} element={<SellerPage />} />
+        <Route
+          path={ROUTES.BEANS}
+          element={
+            <ProtectedRoute>
+              <BeansPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path={ROUTES.SELLERS}
+          element={
+            <ProtectedRoute>
+              <SellerPage />
+            </ProtectedRoute>
+          }
+        />
 
         <Route path={ROUTES.AUTH.ROOT} element={<AuthLayout />}>
           <Route path={ROUTES.AUTH.LOGIN} element={<SignIn />} />

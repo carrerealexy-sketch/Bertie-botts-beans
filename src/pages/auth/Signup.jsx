@@ -1,6 +1,11 @@
-import { Button, Container, Form } from "react-bootstrap";
+import { Lock, UserRound } from "lucide-react";
 
 import { AuthContext } from "../../contexts/AuthContext";
+import { AuthFormHeader } from "../../components/ui/form/auth-form-header";
+import { AuthInput } from "../../components/ui/form/auth-input";
+import { AuthLinkRedirect } from "../../components/ui/form/AuthLinkRedirect";
+import { FormButton } from "../../components/ui/form/FormButton";
+import { PasswordStrength } from "../../components/ui/form/PasswordStrength";
 import { ROUTES } from "../../constants";
 import { signupValidation } from "../../validation/auth-validation";
 import { use } from "react";
@@ -8,24 +13,27 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
 export const SignUp = () => {
-  const { signup } = use(AuthContext);
   const navigate = useNavigate();
+  const { signup } = use(AuthContext);
 
   const {
     register,
     handleSubmit,
     getValues,
-    formState: { errors },
+    watch,
+    formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
-      username: "",
+      name: "",
       password: "",
       confirmPassword: "",
     },
   });
 
+  const password = watch("password");
+
   const onSubmit = async (formData) => {
-    const { password, name } = formData;
+    const { name, password } = formData;
 
     const success = await signup({
       name,
@@ -40,54 +48,61 @@ export const SignUp = () => {
   };
 
   return (
-    <Container>
-      <Form onSubmit={handleSubmit(onSubmit)} noValidate>
-        <Form.Group className="mb-3">
-          <Form.Label>Nom d'utilisateur</Form.Label>
-          <Form.Control
-            type="text"
+    <div className="relative w-full max-w-[440px] flex flex-col items-center rounded-2xl">
+      <div className="bg-white w-full bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col">
+        <AuthFormHeader title="Créer un compte" />
+
+        <form
+          className="flex flex-col gap-4"
+          onSubmit={handleSubmit(onSubmit)}
+          noValidate
+        >
+          <AuthInput
+            name="name"
+            label="Nom d'utilisateur"
             placeholder="Entrer votre nom"
-            isInvalid={!!errors.username}
-            {...register("username", signupValidation.name)}
+            icon={UserRound}
+            register={register}
+            validation={signupValidation.name}
+            error={errors.name}
           />
 
-          <Form.Control.Feedback type="invalid">
-            {errors.username?.message}
-          </Form.Control.Feedback>
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Mot de passe</Form.Label>
-          <Form.Control
+          <AuthInput
+            name="password"
+            label="Mot de passe"
             type="password"
-            placeholder="Entrer votre mot de passe"
-            isInvalid={!!errors.password}
-            {...register("password", signupValidation.password)}
+            icon={Lock}
+            register={register}
+            validation={signupValidation.password}
+            error={errors.password}
           />
 
-          <Form.Control.Feedback type="invalid">
-            {errors.password?.message}
-          </Form.Control.Feedback>
-        </Form.Group>
-
-        <Form.Group className="mb-3">
-          <Form.Label>Confirmer le mot de passe</Form.Label>
-          <Form.Control
+          <AuthInput
+            name="confirmPassword"
+            label="Confirmer le mot de passe"
             type="password"
-            placeholder="Confirmer votre mot de passe"
-            isInvalid={!!errors.confirmPassword}
-            {...register(
-              "confirmPassword",
-              signupValidation.confirmPassword(getValues),
-            )}
+            icon={Lock}
+            register={register}
+            validation={signupValidation.confirmPassword(getValues)}
+            error={errors.confirmPassword}
           />
-          <Form.Control.Feedback type="invalid">
-            {errors.confirmPassword?.message}
-          </Form.Control.Feedback>
-        </Form.Group>
 
-        <Button type="submit">Créer un compte</Button>
-      </Form>
-    </Container>
+          <PasswordStrength password={password} />
+
+          <FormButton
+            loading={isSubmitting}
+            loadingText="Création de votre compte..."
+          >
+            Créer mon compte atelier
+          </FormButton>
+        </form>
+
+        <AuthLinkRedirect
+          message="Déjà un accès ?"
+          label="Se connecter"
+          to={ROUTES.AUTH.LOGIN}
+        />
+      </div>
+    </div>
   );
 };

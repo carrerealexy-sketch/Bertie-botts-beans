@@ -3,11 +3,11 @@ const API_URL = "http://localhost:3000";
 export const login = async (credentials) => {
   try {
     const params = new URLSearchParams({
-      username: credentials.username,
+      name: credentials.name,
       password: credentials.password,
     });
 
-    const response = await fetch(`${API_URL}/users?${params}`);
+    const response = await fetch(`${API_URL}/accounts?${params}`);
 
     if (!response.ok) {
       throw new Error("Erreur lors de la connexion");
@@ -30,7 +30,7 @@ export const login = async (credentials) => {
 
 export const register = async (user) => {
   try {
-    const response = await fetch(`${API_URL}/users/`, {
+    const response = await fetch(`${API_URL}/accounts/`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
