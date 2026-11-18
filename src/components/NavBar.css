@@ -1,0 +1,69 @@
+.site-navbar {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: center;
+  width: 100%;
+  min-height: 84px;
+  padding: 0.5rem 1rem;
+  background-color: rgb(28 13 5 / 78%);
+  border-bottom: 1px solid rgb(226 190 96 / 65%);
+  box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 25%);
+  backdrop-filter: blur(8px);
+}
+
+.site-navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.navbar-logo {
+  width: 64px;
+  height: 64px;
+  border: 2px solid #e2be60;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 0.75rem rgb(226 190 96 / 35%);
+}
+
+.navbar-title {
+  margin: 0;
+  color: #e2be60;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.site-navbar .navbar-collapse {
+  justify-content: center;
+  flex-grow: 0;
+}
+
+.site-navbar .navbar-nav {
+  gap: 0.5rem;
+}
+
+.site-navbar .navbar-nav .nav-link {
+  padding: 0.5rem 0.85rem;
+  border-radius: 0.4rem;
+  color: #f7e8c3;
+  font-weight: 600;
+}
+
+.site-navbar .navbar-nav .nav-link:hover,
+.site-navbar .navbar-nav .nav-link:focus-visible {
+  background-color: rgb(226 190 96 / 18%);
+  color: #fff;
+}
+
+@media (max-width: 575.98px) {
+  .site-navbar {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.75rem;
+  }
+
+  .site-navbar .navbar-collapse {
+    grid-column: 1;
+    justify-self: center;
+  }
+}

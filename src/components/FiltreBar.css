@@ -1,0 +1,71 @@
+.filter-bar {
+  width: 100%;
+  min-height: 84px;
+  padding: 0.5rem max(1rem, calc((100% - 1140px) / 2));
+  background-color: rgb(28 13 5 / 68%);
+  border: 1px solid rgb(226 190 96 / 65%);
+  box-shadow: 0 0.4rem 1.2rem rgb(0 0 0 / 25%);
+  backdrop-filter: blur(8px);
+}
+
+.filter-bar-title {
+  margin-bottom: 1.25rem;
+  font-size: 1.5rem;
+  color: #e2be60;
+}
+
+.filter-bar-section + .filter-bar-section {
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e6e1d8;
+  color: #e2be60;
+}
+
+.filter-bar-section {
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+.filter-bar-heading {
+  display: block;
+  width: 100%;
+  margin-bottom: 0.75rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #e2be60;
+}
+
+.filter-bar-options {
+  display: grid;
+  gap: 0.5rem;
+  color: #faf9f8;
+}
+
+.filter-bar-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  cursor: pointer;
+}
+
+.filter-bar-option input {
+  flex: 0 0 auto;
+  margin-top: 0.25rem;
+  accent-color: #e2be60;
+}
+
+.filter-bar-reset {
+  margin-top: 1.5rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e2be60;
+  border-radius: 0.4rem;
+  background-color: transparent;
+  color: #faf9f8;
+  cursor: pointer;
+}
+
+.filter-bar-reset:hover,
+.filter-bar-reset:focus-visible {
+  background-color: rgb(226 190 96 / 18%);
+}
