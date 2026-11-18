@@ -21,7 +21,7 @@ export const SignIn = () => {
     formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
-      username: "",
+      name: "",
       password: "",
     },
   });
@@ -47,13 +47,13 @@ export const SignIn = () => {
           noValidate
         >
           <AuthInput
-            name="username"
+            name="name"
             label="Nom"
             placeholder="Entrer votre nom"
             icon={UserRound}
             register={register}
             validation={signinValidation.name}
-            error={errors.username}
+            error={errors.name}
           />
 
           <AuthInput
@@ -76,8 +76,8 @@ export const SignIn = () => {
         </form>
 
         <AuthLinkRedirect
-          message="Pas encore d'accès sorcier ?"
-          label="Créer un compte atelier"
+          message="Pas encore d'accès ?"
+          label="Créer un compte"
           to={ROUTES.AUTH.REGISTER}
         />
       </div>

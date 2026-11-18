@@ -101,7 +101,7 @@
       "image": "https://placehold.co/400x250"
     }
   ],
-  "Comptes": [
+  "accounts": [
     {
       "id": "1",
       "name": "Harry Potter",
@@ -125,13 +125,11 @@
       "name": "George Weasley",
       "password": "password123",
       "isAdmin": true
-    }
-  ],
-  "users": [
+    },
     {
-      "id": "1",
-      "username": "toto",
-      "password": 123456
+      "name": "bobby kenedy",
+      "password": "bobbykenedy",
+      "id": "oCE6Gj3-NZU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -22,17 +22,17 @@ export const SignUp = () => {
     formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
-      username: "",
+      name: "",
       password: "",
       confirmPassword: "",
     },
   });
 
   const onSubmit = async (formData) => {
-    const { username, password } = formData;
+    const { name, password } = formData;
 
     const success = await signup({
-      username,
+      name,
       password,
     });
 
@@ -54,13 +54,13 @@ export const SignUp = () => {
           noValidate
         >
           <AuthInput
-            name="username"
+            name="name"
             label="Nom d'utilisateur"
             placeholder="Entrer votre nom"
             icon={UserRound}
             register={register}
             validation={signupValidation.name}
-            error={errors.username}
+            error={errors.name}
           />
 
           <AuthInput
@@ -94,7 +94,7 @@ export const SignUp = () => {
         </form>
 
         <AuthLinkRedirect
-          message="Déjà un accès sorcier ?"
+          message="Déjà un accès ?"
           label="Se connecter"
           to={ROUTES.AUTH.LOGIN}
         />
