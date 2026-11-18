@@ -6,6 +6,7 @@
       "description": "Délicieux beans goût poubelle",
       "price": 1,
       "stock": 17,
+      "Categorie": "Beans",
       "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     },
     {
@@ -14,6 +15,7 @@
       "description": "Laicez-vous surprendre par notre boîte de beans mystère !",
       "price": 3,
       "stock": 8,
+      "Categorie": "Boîte",
       "image": "https://m.media-amazon.com/images/I/71ADjBAo7fL._AC_UF1000,1000_QL80_.jpg"
     },
     {
@@ -22,6 +24,7 @@
       "description": "Délicieux beans goût poubelle",
       "price": 3,
       "stock": 5,
+      "Categorie": "Boîte",
       "image": "https://m.media-amazon.com/images/I/71QSa3iWYbL.jpg_BO30,255,255,255_UF750,750_SR1910,1000,0,C_QL100_.jpg"
     },
     {
@@ -30,6 +33,7 @@
       "description": "Délicieux beans goût gazon",
       "price": 1,
       "stock": 10,
+      "Categorie": "Beans",
       "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     },
     {
@@ -38,6 +42,7 @@
       "description": "Laicez-vous surprendre par notre superboîte de beans mystère !",
       "price": 10,
       "stock": 2,
+      "Categorie": "Boîte",
       "image": "https://www.yourwdwstore.net/assets/images/9/90000/0000/800/90805.jpg"
     },
     {
@@ -46,6 +51,7 @@
       "description": "Délicieux beans goût gazon",
       "price": 1,
       "stock": 10,
+      "Categorie": "Beans",
       "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     },
     {
@@ -54,6 +60,7 @@
       "description": "Délicieux beans goût gazon",
       "price": 1,
       "stock": 10,
+      "Categorie": "Beans",
       "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     },
     {
@@ -62,6 +69,7 @@
       "description": "Délicieux beans goût gazon",
       "price": 1,
       "stock": 10,
+      "Categorie": "Beans",
       "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
     }
   ],
