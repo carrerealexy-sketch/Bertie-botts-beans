@@ -33,7 +33,6 @@ export const AuthProvider = ({ children }) => {
   const signup = async (userData) => {
     try {
       const user = await register(userData);
-      console.log(user);
 
       const { ...userWithoutPassword } = user;
 
@@ -46,11 +45,24 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const logout = () => {
+    try {
+      localStorage.removeItem("user");
+      setConnectedUser(null);
+      return true;
+    } catch (error) {
+      console.error(error);
+      return false;
+    }
+  };
+
   return (
     <AuthContext.Provider
       value={{
         login,
         signup,
+        logout,
+        connectedUser,
       }}
     >
       {children}
