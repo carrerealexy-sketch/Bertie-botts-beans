@@ -1,32 +1,36 @@
 import { Button, Container, Form } from "react-bootstrap";
-import { useContext, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import { ROUTES } from "../../constants";
+import { signupValidation } from "../../validation/auth-validation";
+import { use } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 
 export const SignUp = () => {
-  const { signup } = useContext(AuthContext);
+  const { signup } = use(AuthContext);
   const navigate = useNavigate();
 
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+  const {
+    register,
+    handleSubmit,
+    getValues,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      username: "",
+      password: "",
+      confirmPassword: "",
+    },
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
+  const onSubmit = async (formData) => {
+    const { password, name } = formData;
 
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const success = await signup(formData);
+    const success = await signup({
+      name,
+      password,
+    });
 
     if (success) {
       navigate(ROUTES.DASHBOARD.ROOT);
@@ -37,26 +41,49 @@ export const SignUp = () => {
 
   return (
     <Container>
-      <Form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit(onSubmit)} noValidate>
         <Form.Group className="mb-3">
           <Form.Label>Nom d'utilisateur</Form.Label>
           <Form.Control
-            name="username"
-            value={formData.username}
-            onChange={handleChange}
-            required
+            type="text"
+            placeholder="Entrer votre nom"
+            isInvalid={!!errors.username}
+            {...register("username", signupValidation.name)}
           />
+
+          <Form.Control.Feedback type="invalid">
+            {errors.username?.message}
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Form.Group className="mb-3">
           <Form.Label>Mot de passe</Form.Label>
           <Form.Control
             type="password"
-            name="password"
-            value={formData.password}
-            onChange={handleChange}
-            required
+            placeholder="Entrer votre mot de passe"
+            isInvalid={!!errors.password}
+            {...register("password", signupValidation.password)}
           />
+
+          <Form.Control.Feedback type="invalid">
+            {errors.password?.message}
+          </Form.Control.Feedback>
+        </Form.Group>
+
+        <Form.Group className="mb-3">
+          <Form.Label>Confirmer le mot de passe</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Confirmer votre mot de passe"
+            isInvalid={!!errors.confirmPassword}
+            {...register(
+              "confirmPassword",
+              signupValidation.confirmPassword(getValues),
+            )}
+          />
+          <Form.Control.Feedback type="invalid">
+            {errors.confirmPassword?.message}
+          </Form.Control.Feedback>
         </Form.Group>
 
         <Button type="submit">Créer un compte</Button>

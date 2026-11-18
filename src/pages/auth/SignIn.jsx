@@ -1,33 +1,32 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
+import {
+  signinValidation,
+  signupValidation,
+} from "../../validation/auth-validation";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import Form from "react-bootstrap/Form";
 import { ROUTES } from "../../constants";
 import { use } from "react";
+import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
-import { useState } from "react";
 
 export const SignIn = () => {
   const navigate = useNavigate();
   const { login } = use(AuthContext);
 
-  const [formData, setFormData] = useState({
-    username: "",
-    password: "",
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    defaultValues: {
+      username: "",
+      password: "",
+    },
   });
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
+  const onSubmit = async (formData) => {
     const success = await login(formData);
 
     if (success) {
@@ -41,27 +40,33 @@ export const SignIn = () => {
     <Container>
       <Row>
         <Col>
-          <Form onSubmit={handleSubmit}>
+          <Form onSubmit={handleSubmit(onSubmit)} noValidate>
             <Form.Group className="mb-3" controlId="formGroupUsername">
               <Form.Label>Nom</Form.Label>
               <Form.Control
                 type="text"
-                name="username"
                 placeholder="Entrer votre nom"
-                value={formData.username}
-                onChange={handleChange}
+                isInvalid={!!errors.username}
+                {...register("username", signinValidation.name)}
               />
+
+              <Form.Control.Feedback type="invalid">
+                {errors.username?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formGroupPassword">
               <Form.Label>Mot de passe</Form.Label>
               <Form.Control
                 type="password"
-                name="password"
-                placeholder="Entrer un nom d'utilisateur"
-                value={formData.password}
-                onChange={handleChange}
+                placeholder="Entrer votre mot de passe"
+                isInvalid={!!errors.password}
+                {...register("password", signinValidation.password)}
               />
+
+              <Form.Control.Feedback type="invalid">
+                {errors.password?.message}
+              </Form.Control.Feedback>
             </Form.Group>
 
             <Button variant="primary" type="submit">

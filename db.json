@@ -107,12 +107,7 @@
     {
       "id": "1",
       "username": "toto",
-      "password": 1234
-    },
-    {
-      "username": "john",
-      "password": 12345,
-      "id": "XgQ2vI4zlTs"
+      "password": 123456
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
