@@ -6,3 +6,4 @@ body {
   background-attachment: fixed;
   background-color: #111111;
 }
+@import "tailwindcss";
