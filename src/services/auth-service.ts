@@ -27,3 +27,23 @@ export const login = async (credentials) => {
     throw error;
   }
 };
+
+export const register = async (user) => {
+  try {
+    const response = await fetch(`${API_URL}/users/`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(user),
+    });
+
+    if (!response.ok) {
+      throw new Error("Erreur lors de l'inscription");
+    }
+
+    return await response.json();
+  } catch (error) {
+    console.error(error);
+  }
+};

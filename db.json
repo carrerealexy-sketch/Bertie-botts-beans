@@ -105,9 +105,14 @@
   ],
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "username": "toto",
       "password": 1234
+    },
+    {
+      "username": "john",
+      "password": "12345",
+      "id": "XgQ2vI4zlTs"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

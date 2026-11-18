@@ -1,14 +1,14 @@
 import { Button, Col, Container, Row } from "react-bootstrap";
-import { useContext, useState } from "react";
 
 import { AuthContext } from "../../contexts/AuthContext";
 import Form from "react-bootstrap/Form";
+import { use } from "react";
 import { useNavigate } from "react-router";
+import { useState } from "react";
 
 export const SignIn = () => {
   const navigate = useNavigate();
-
-  const { login } = useContext(AuthContext);
+  const { login } = use(AuthContext);
 
   const [formData, setFormData] = useState({
     username: "",
@@ -26,9 +26,14 @@ export const SignIn = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await login(formData).then(() => {
-      navigate("/");
-    });
+
+    const success = await login(formData);
+
+    if (success) {
+      navigate("/dashboard");
+    } else {
+      console.log("Identifiants incorrects");
+    }
   };
 
   return (
