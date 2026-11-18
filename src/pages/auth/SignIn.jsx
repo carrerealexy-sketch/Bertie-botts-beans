@@ -60,7 +60,6 @@ export const SignIn = () => {
             name="password"
             label="Mot de passe"
             type="password"
-            placeholder="••••••••••••"
             icon={Lock}
             register={register}
             validation={signinValidation.password}

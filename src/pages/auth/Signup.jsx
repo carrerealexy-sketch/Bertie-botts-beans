@@ -5,6 +5,7 @@ import { AuthFormHeader } from "../../components/ui/form/auth-form-header";
 import { AuthInput } from "../../components/ui/form/auth-input";
 import { AuthLinkRedirect } from "../../components/ui/form/AuthLinkRedirect";
 import { FormButton } from "../../components/ui/form/FormButton";
+import { PasswordStrength } from "../../components/ui/form/PasswordStrength";
 import { ROUTES } from "../../constants";
 import { signupValidation } from "../../validation/auth-validation";
 import { use } from "react";
@@ -19,6 +20,7 @@ export const SignUp = () => {
     register,
     handleSubmit,
     getValues,
+    watch,
     formState: { errors, isSubmitting },
   } = useForm({
     defaultValues: {
@@ -27,6 +29,8 @@ export const SignUp = () => {
       confirmPassword: "",
     },
   });
+
+  const password = watch("password");
 
   const onSubmit = async (formData) => {
     const { name, password } = formData;
@@ -67,7 +71,6 @@ export const SignUp = () => {
             name="password"
             label="Mot de passe"
             type="password"
-            placeholder="••••••••••••"
             icon={Lock}
             register={register}
             validation={signupValidation.password}
@@ -78,12 +81,13 @@ export const SignUp = () => {
             name="confirmPassword"
             label="Confirmer le mot de passe"
             type="password"
-            placeholder="••••••••••••"
             icon={Lock}
             register={register}
             validation={signupValidation.confirmPassword(getValues)}
             error={errors.confirmPassword}
           />
+
+          <PasswordStrength password={password} />
 
           <FormButton
             loading={isSubmitting}
