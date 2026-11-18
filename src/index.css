@@ -1,3 +1,5 @@
+@import "tailwindcss";
+
 body {
   background-image: url("https://png.pngtree.com/background/20250415/original/pngtree-red-and-gold-luxury-background-picture-image_16440327.jpg");
   background-size: cover;
@@ -6,4 +8,34 @@ body {
   background-attachment: fixed;
   background-color: #111111;
 }
+
 @import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-primary: var(--primary);
+  --color-danger: var(--danger);
+  --color-info: var(--info);
+  --color-warning: var(--warning);
+  --color-success: var(--success);
+  --color-contrast: var(--contrast);
+  --color-secondary: var(--secondary);
+
+  /* Fonts */
+  --font-display: "Noto Serif", "serif";
+  --font-sans: "Noto Sans", "sans-serif";
+  --font-serif-elegant: "Playfair Display", "serif";
+  --font-signature: "Dancing Script", "cursive";
+  --font-manrope: "Manrope", "sans-serif";
+}
+
+:root {
+  --primary: hwb(335 7% 17%);
+  --danger: oklch(71% 0.194 13.428);
+  --info: oklch(74% 0.16 232.661);
+  --warning: oklch(82% 0.189 84.429);
+  --success: oklch(76% 0.177 163.223);
+  --contrast: oklch(14% 0.005 285.823);
+  --secondary: oklch(21.009% 0.03179 264.678);
+}
