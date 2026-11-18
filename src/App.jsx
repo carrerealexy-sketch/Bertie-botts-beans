@@ -62,7 +62,7 @@ export const App = () => {
               element={<AddBeanDashboardPage />}
             />
             <Route
-              path={ROUTES.DASHBOARD.BEANS.EDIT}
+              path={`${ROUTES.DASHBOARD.BEANS.EDIT}/:beanId`}
               element={<EditBeanDashboardPage />}
             />
           </Route>

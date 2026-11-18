@@ -1,13 +1,13 @@
 {
   "products": [
     {
-      "id": "1",
-      "name": "10 Beans goût poubelle",
-      "description": "Délicieux beans goût poubelle",
-      "price": 1,
-      "stock": 17,
+      "name": "10 Beans goût poubelle totototo",
       "Categorie": "Beans",
-      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
+      "description": "Délicieux beans goût poubelle",
+      "price": 1.08,
+      "stock": 24,
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr",
+      "id": "1"
     },
     {
       "id": "2",

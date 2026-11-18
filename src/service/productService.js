@@ -1,39 +1,38 @@
-const API_URL = 'http://localhost:3000/products'
+const API_URL = "http://localhost:3000/products";
 
 export default async function getProducts() {
-    const response = await fetch(API_URL)
+  const response = await fetch(API_URL);
 
-    if(!response.ok) {
-        throw new Error('Erreur lors de la récupération des produits')
-    }
+  if (!response.ok) {
+    throw new Error("Erreur lors de la récupération des produits");
+  }
 
-    return await response.json()
+  return await response.json();
 }
 
 export async function addProduct(product) {
-    const response = await fetch(API_URL, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify(product)
-    })
+  const response = await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product),
+  });
 
-    if(!response.ok) {
-        throw new Error('Erreur lors de l ajout du produit')
-    }
+  if (!response.ok) {
+    throw new Error("Erreur lors de l ajout du produit");
+  }
 
-    return await response.json()
+  return await response.json();
 }
 
 export async function getProductById(id) {
-    const response = await fetch(`${API_URL}/${id}`)
+  const response = await fetch(`${API_URL}/${id}`);
 
-    if(!response.ok) {
-        throw new Error('Produit introuvable')
-    }
+  if (!response.ok) {
+    throw new Error("Produit introuvable");
+  }
 
-    return await response.json()
+  return await response.json();
 }
-
 
 export async function deleteProduct(id) {
   const response = await fetch(`${API_URL}/${id}`, {
@@ -45,4 +44,20 @@ export async function deleteProduct(id) {
   }
 
   return true;
+}
+
+export async function updateProduct(id, updatedProduct) {
+  const response = await fetch(`${API_URL}/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(updatedProduct),
+  });
+
+  if (!response.ok) {
+    throw new Error("Erreur lors de la modification du produit");
+  }
+
+  return await response.json();
 }

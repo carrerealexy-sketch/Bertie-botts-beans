@@ -1,16 +1,20 @@
 import "./BeansPage.css";
 
+import { Pencil, Trash } from "lucide-react";
 import getProducts, { deleteProduct } from "../../service/productService";
 import { useEffect, useState } from "react";
 
 import { DeleteModal } from "../../components/ui/modal/DeleteModal";
 import FiltreBar from "../../components/FiltreBar";
 import NavBar from "../../components/NavBar";
-import { Trash } from "lucide-react";
+import { ROUTES } from "../../constants";
+import { useNavigate } from "react-router";
 
 const PRODUCTS_PER_PAGE = 6;
 
 export const BeansPage = () => {
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [searchTerm, setSearchTerm] = useState("");
@@ -141,41 +145,65 @@ export const BeansPage = () => {
           />
           <div className="bean-catalog-results">
             <div className="row gy-4 bean-product-grid">
-              {currentProducts.map((product) => (
-                <div
-                  className="relative col-12 col-sm-6 col-lg-4"
-                  key={product.id}
-                >
-                  <article className="bean-card">
-                    <div className="absolute top-4 right-5">
-                      <button>
-                        <Trash
-                          size={20}
-                          className="text-danger"
-                          onClick={() => handleDeleteClick(product)}
-                          aria-label={`Supprimer ${product.name}`}
-                          title="Supprimer le produit"
-                        />
-                      </button>
-                    </div>
-                    <img
-                      src={product.image}
-                      className="bean-card-image"
-                      alt={product.name}
-                    />
-                    <div className="bean-card-content">
-                      <h2 className="bean-card-title">{product.name}</h2>
-                      <p className="bean-card-description">
-                        {product.description}
-                      </p>
-                      <p className="bean-card-price">
-                        Prix : {product.price} Gallion
-                      </p>
-                    </div>
-                    <p className="bean-card-stock">Stock : {product.stock}</p>
-                  </article>
-                </div>
-              ))}
+              {currentProducts.map((product) => {
+								console.log(product);
+								
+                return (
+                  <div
+                    className="relative col-12 col-sm-6 col-lg-4"
+                    key={product.id}
+                  >
+                    <article className="bean-card">
+                      <div className="absolute top-4 right-5 flex gap-2">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            navigate(
+                              `${ROUTES.DASHBOARD.BEANS.EDIT}/${product.id}`,
+                            )
+                          }
+                          className="text-slate-500 transition-colors hover:text-orange-600"
+                          aria-label={`Modifier ${product.name}`}
+                          title="Modifier le bean"
+                        >
+                          <Pencil
+                            size={20}
+                            className="text-success"
+                            onClick={() => handleDeleteClick(product)}
+                            aria-label={`Modifier ${product.name}`}
+                            title={`Modifier ${product.name}`}
+                          />
+                        </button>
+
+                        <button>
+                          <Trash
+                            size={20}
+                            className="text-danger"
+                            onClick={() => handleDeleteClick(product)}
+                            aria-label={`Supprimer ${product.name}`}
+                            title="Supprimer le produit"
+                          />
+                        </button>
+                      </div>
+                      <img
+                        src={product.image}
+                        className="bean-card-image"
+                        alt={product.name}
+                      />
+                      <div className="bean-card-content">
+                        <h2 className="bean-card-title">{product.name}</h2>
+                        <p className="bean-card-description">
+                          {product.description}
+                        </p>
+                        <p className="bean-card-price">
+                          Prix : {product.price} Gallion
+                        </p>
+                      </div>
+                      <p className="bean-card-stock">Stock : {product.stock}</p>
+                    </article>
+                  </div>
+                );
+              })}
             </div>
             {filteredProducts.length === 0 && (
               <p className="text-center mt-4">Aucun produit trouvé.</p>
