@@ -40,7 +40,7 @@ export const BeansPage = () => {
         availability === 'all' ||
         (availability === 'in-stock' && hasStock) ||
         (availability === 'out-of-stock' && !hasStock)
-
+        
       return matchesSearch && matchesCategory && matchesAvailability
     })
     .sort((firstProduct, secondProduct) => {
