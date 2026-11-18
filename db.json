@@ -71,6 +71,15 @@
       "stock": 10,
       "Categorie": "Beans",
       "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr"
+    },
+    {
+      "name": "10 Beans goût Horcrux",
+      "description": "Délicieux Beans goût Horcrux.",
+      "price": 1,
+      "stock": 1,
+      "Categorie": "Beans",
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/2/2f/Drag%C3%A9es_surprises_de_Bertie_Crochue.png/revision/latest/thumbnail/width/360/height/360?cb=20161227214303&path-prefix=fr",
+      "id": "gHvjTR_3koE"
     }
   ],
   "vendeurs": [

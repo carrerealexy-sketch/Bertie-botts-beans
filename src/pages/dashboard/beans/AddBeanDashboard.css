@@ -1,0 +1,180 @@
+.add-bean-page {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  padding: 1rem clamp(1.25rem, 4vw, 3rem) 1.75rem;
+}
+
+.add-bean-card {
+  width: min(100%, 48rem);
+  padding: clamp(1.25rem, 2.5vw, 2rem) clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgb(226 190 96 / 65%);
+  border-radius: 1rem;
+  background: linear-gradient(145deg, rgb(45 20 17 / 94%), rgb(24 15 13 / 94%));
+  box-shadow: 0 1.25rem 3.5rem rgb(0 0 0 / 45%), inset 0 0 2rem rgb(226 190 96 / 5%);
+  backdrop-filter: blur(10px);
+}
+
+.add-bean-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #f0d58b;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.add-bean-back:hover,
+.add-bean-back:focus-visible {
+  color: #fff3cc;
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
+
+.add-bean-header {
+  margin: 1.25rem 0 1.5rem;
+}
+
+.add-bean-eyebrow {
+  margin: 0 0 0.35rem;
+  color: #e2be60;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.add-bean-header h1 {
+  margin: 0;
+  color: #fff3d4;
+  font-family: var(--font-serif-elegant, Georgia, serif);
+  font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.add-bean-header > p:last-child {
+  margin: 0.6rem 0 0;
+  color: #e5d6c6;
+}
+
+.add-bean-form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.add-bean-field {
+  min-width: 0;
+}
+
+.add-bean-field-description,
+.add-bean-field-image,
+.add-bean-feedback,
+.add-bean-form-actions {
+  grid-column: 1 / -1;
+}
+
+.add-bean-form .form-label {
+  margin-bottom: 0.45rem;
+  color: #f7e8c3;
+  font-weight: 600;
+}
+
+.add-bean-form .form-control,
+.add-bean-form .form-select {
+  min-height: 2.9rem;
+  border: 1px solid rgb(226 190 96 / 45%);
+  border-radius: 0.55rem;
+  background-color: rgb(17 12 11 / 78%);
+  color: #fff8e9;
+}
+
+.add-bean-form .form-select option {
+  background-color: #241714;
+  color: #fff8e9;
+}
+
+.add-bean-form .form-control:focus,
+.add-bean-form .form-select:focus {
+  border-color: #e2be60;
+  background-color: rgb(17 12 11 / 90%);
+  box-shadow: 0 0 0 0.2rem rgb(226 190 96 / 20%);
+  color: #fff8e9;
+}
+
+.add-bean-form textarea.form-control {
+  min-height: 6rem;
+  resize: vertical;
+}
+
+.add-bean-feedback {
+  margin: 0;
+  font-weight: 600;
+}
+
+.add-bean-feedback.is-success {
+  color: #a9e3ad;
+}
+
+.add-bean-feedback.is-error {
+  color: #ffaaa3;
+}
+
+.add-bean-form-actions {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.add-bean-submit {
+  min-height: 2.9rem;
+  padding: 0.7rem 1.25rem;
+  border: 1px solid #f0d071;
+  border-radius: 0.55rem;
+  background: linear-gradient(135deg, #f0d071, #c99a35);
+  color: #28150d;
+  font-weight: 700;
+  transition: filter 150ms ease, transform 150ms ease;
+}
+
+.add-bean-submit:hover:not(:disabled) {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.add-bean-submit:focus-visible {
+  outline: 3px solid #fff3cc;
+  outline-offset: 3px;
+}
+
+.add-bean-submit:disabled {
+  cursor: wait;
+  opacity: 0.7;
+}
+
+@media (max-width: 575.98px) {
+  .add-bean-page {
+    padding: 1rem;
+  }
+
+  .add-bean-card {
+    padding: 1.25rem;
+  }
+
+  .add-bean-form {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .add-bean-field-description,
+  .add-bean-field-image,
+  .add-bean-feedback,
+  .add-bean-form-actions {
+    grid-column: auto;
+  }
+
+  .add-bean-form-actions {
+    justify-content: stretch;
+  }
+
+  .add-bean-submit {
+    width: 100%;
+  }
+}
