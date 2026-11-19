@@ -1,8 +1,9 @@
 import "./BeansPage.css";
 
 import getProducts, { deleteProduct } from "../../service/productService";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 
+import { AuthContext } from "../../contexts/AuthContext";
 import { BeanCard } from "../../components/ui/card/bean-card";
 import { DeleteModal } from "../../components/ui/modal/DeleteModal";
 import FiltreBar from "../../components/FiltreBar";
@@ -16,6 +17,8 @@ import { useBean } from "../../hooks/use-bean";
 import { usePagination } from "../../hooks/use-pagination";
 
 export const BeansPage = () => {
+  const { connectedUser } = use(AuthContext);
+
   const {
     setProducts,
     selectedProduct,
@@ -94,12 +97,14 @@ export const BeansPage = () => {
       <NavBar />
       <div className="container mt-5">
         <fiv className="flex justify-end gap-2 mb-4">
-          <Link
-            to={ROUTES.DASHBOARD.BEANS.ADD}
-            className="btn btn-primary flex items-center justify-center gap-2"
-          >
-            <Plus />
-          </Link>
+          {connectedUser.isAdmin && (
+            <Link
+              to={ROUTES.DASHBOARD.BEANS.ADD}
+              className="btn btn-primary flex items-center justify-center gap-2"
+            >
+              <Plus />
+            </Link>
+          )}
 
           <SearchInput
             htmlFor="bean-search-input"

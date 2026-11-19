@@ -52,7 +52,7 @@ export const SignIn = () => {
   return (
     <div className="relative w-full max-w-[440px] flex flex-col items-center rounded-2xl">
       <div className="bg-white w-full bg-surface-container-lowest rounded-xl shadow-sm p-6 flex flex-col">
-        <AuthFormHeader title="Connection" />
+        <AuthFormHeader title="Connexion" />
 
         <form
           className="flex flex-col gap-4"
