@@ -27,17 +27,19 @@ export const SignUp = () => {
       name: "",
       password: "",
       confirmPassword: "",
+      isAdmin: false,
     },
   });
 
   const password = watch("password");
 
   const onSubmit = async (formData) => {
-    const { name, password } = formData;
+    const { name, password, isAdmin } = formData;
 
     const success = await signup({
       name,
       password,
+      isAdmin,
     });
 
     if (success) {
