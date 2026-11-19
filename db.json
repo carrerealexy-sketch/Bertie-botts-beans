@@ -46,7 +46,7 @@
       "image": "https://www.yourwdwstore.net/assets/images/9/90000/0000/800/90805.jpg"
     },
     {
-      "name": "10 Beans goût Semelle",
+      "name": "10 Beans goût",
       "description": "Délicieux beans goût Semelle",
       "price": 1,
       "stock": 10,
@@ -170,14 +170,10 @@
       "isAdmin": true
     },
     {
-      "name": "bobby kenedy",
-      "password": "bobbykenedy",
-      "id": "oCE6Gj3-NZU"
-    },
-    {
-      "name": "johnnnnnnnnnn",
-      "password": "12*56Ghj",
-      "id": "zpAtfK4Bawc"
+      "name": "Nimbus2000",
+      "password": "SuperN1bus2000@",
+      "isAdmin": false,
+      "id": "Lv8L2LOmj0g"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
