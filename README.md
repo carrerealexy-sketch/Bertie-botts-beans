@@ -162,6 +162,9 @@ Le terminal affiche l'adresse du site (généralement [http://localhost:5173](ht
 | `npm run build` | Génère la version de production dans `dist/` |
 | `npm run preview` | Prévisualise la version de production |
 | `npx json-server db.json --port 3000` | Lance l'API simulée sur le port 3000 |
+| `npm test` | Lance les tests Vitest en mode interactif |
+| `npm run test:run` | Lance une fois tous les tests Vitest |
+| `npm run test:coverage` | Lance les tests Vitest et génère le rapport de couverture |
 
 ---
 
