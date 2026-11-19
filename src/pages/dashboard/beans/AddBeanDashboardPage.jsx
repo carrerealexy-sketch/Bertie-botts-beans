@@ -19,7 +19,6 @@ const INITIAL_PRODUCT = {
 export const AddBeanDashboardPage = () => {
   const navigate = useNavigate();
 
-  const [product, setProduct] = useState(INITIAL_PRODUCT);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [feedback, setFeedback] = useState(null);
 
