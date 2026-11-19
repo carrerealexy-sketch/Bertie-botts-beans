@@ -1,4 +1,6 @@
-import './FiltreBar.css'
+import "./FiltreBar.css";
+
+import { FilterItem } from "./ui/filter/filter-item";
 
 function FiltreBar({
   category,
@@ -9,123 +11,79 @@ function FiltreBar({
   onSortOrderChange,
   onReset,
 }) {
+  const categories = [
+    { key: "all", label: "Toutes les catégories" },
+    { key: "Boîte", label: "Boîte" },
+    { key: "Beans", label: "Beans" },
+  ];
+
+  const availabilities = [
+    { key: "all", label: "Toutes les disponibilités" },
+    { key: "in-stock", label: "En stock" },
+    { key: "out-of-stock", label: "Épuisé" },
+  ];
+
+  const sortOrders = [
+    { key: "default", label: "Ordre par défaut" },
+    { key: "price-asc", label: "Prix croissant" },
+    { key: "price-desc", label: "Prix décroissant" },
+  ];
+
   return (
-    <aside className='filter-bar' aria-label='Filtres des produits'>
-      <h2 className='filter-bar-title'>Filtres</h2>
+    <aside className="filter-bar" aria-label="Filtres des produits">
+      <h2 className="filter-bar-title">Filtres</h2>
 
-      <fieldset className='filter-bar-section'>
-        <legend className='filter-bar-heading'>Catégorie</legend>
-        <div className='filter-bar-options'>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-category'
-              value='all'
-              checked={category === 'all'}
-              onChange={() => onCategoryChange('all')}
+      <fieldset className="filter-bar-section">
+        <legend className="filter-bar-heading">Catégorie</legend>
+
+        <div className="filter-bar-options">
+          {categories.map((categoryItem) => (
+            <FilterItem
+              label={categoryItem.label}
+              name="product-category"
+              value={categoryItem.key}
+              checked={category === categoryItem.key}
+              onChange={() => onCategoryChange(categoryItem.key)}
             />
-            <span>Toutes les catégories</span>
-          </label>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-category'
-              value='Boîte'
-              checked={category === 'Boîte'}
-              onChange={() => onCategoryChange('Boîte')}
-            />
-            <span>Boîtes de Beans</span>
-          </label>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-category'
-              value='Beans'
-              checked={category === 'Beans'}
-              onChange={() => onCategoryChange('Beans')}
-            />
-            <span>Beans</span>
-          </label>
+          ))}
         </div>
       </fieldset>
 
-      <fieldset className='filter-bar-section'>
-        <legend className='filter-bar-heading'>Disponibilité</legend>
-        <div className='filter-bar-options'>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-availability'
-              value='all'
-              checked={availability === 'all'}
-              onChange={() => onAvailabilityChange('all')}
+      <fieldset className="filter-bar-section">
+        <legend className="filter-bar-heading">Disponibilité</legend>
+        <div className="filter-bar-options">
+          {availabilities.map((availabilityItem) => (
+            <FilterItem
+              label={availabilityItem.label}
+              name="product-availability"
+              value={availabilityItem.key}
+              checked={availability === availabilityItem.key}
+              onChange={() => onAvailabilityChange(availabilityItem.key)}
             />
-            <span>Toutes les disponibilités</span>
-          </label>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-availability'
-              value='in-stock'
-              checked={availability === 'in-stock'}
-              onChange={() => onAvailabilityChange('in-stock')}
-            />
-            <span>En stock</span>
-          </label>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-availability'
-              value='out-of-stock'
-              checked={availability === 'out-of-stock'}
-              onChange={() => onAvailabilityChange('out-of-stock')}
-            />
-            <span>Épuisé</span>
-          </label>
+          ))}
         </div>
       </fieldset>
 
-      <fieldset className='filter-bar-section'>
-        <legend className='filter-bar-heading'>Trier par</legend>
-        <div className='filter-bar-options'>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-sort'
-              value='default'
-              checked={sortOrder === 'default'}
-              onChange={() => onSortOrderChange('default')}
+      <fieldset className="filter-bar-section">
+        <legend className="filter-bar-heading">Trier par</legend>
+        <div className="filter-bar-options">
+          {sortOrders.map((sortOrderItem) => (
+            <FilterItem
+              label={sortOrderItem.label}
+              name="product-sort"
+              value={sortOrderItem.key}
+              checked={sortOrder === sortOrderItem.key}
+              onChange={() => onSortOrderChange(sortOrderItem.key)}
             />
-            <span>Ordre par défaut</span>
-          </label>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-sort'
-              value='price-asc'
-              checked={sortOrder === 'price-asc'}
-              onChange={() => onSortOrderChange('price-asc')}
-            />
-            <span>Prix croissant</span>
-          </label>
-          <label className='filter-bar-option'>
-            <input
-              type='radio'
-              name='product-sort'
-              value='price-desc'
-              checked={sortOrder === 'price-desc'}
-              onChange={() => onSortOrderChange('price-desc')}
-            />
-            <span>Prix décroissant</span>
-          </label>
+          ))}
         </div>
       </fieldset>
 
-      <button className='filter-bar-reset' type='button' onClick={onReset}>
+      <button className="filter-bar-reset" type="button" onClick={onReset}>
         Réinitialiser les filtres
       </button>
     </aside>
-  )
+  );
 }
 
-export default FiltreBar
+export default FiltreBar;
