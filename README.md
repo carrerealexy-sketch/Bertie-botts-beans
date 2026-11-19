@@ -4,6 +4,7 @@ Application web React avec une API simulée via [json-server](https://github.com
 
 ## Sommaire
 
+- [Stack technique](#stack-technique)
 - [Prérequis](#prérequis)
 - [Installer Node.js et npm](#installer-nodejs-et-npm)
   - [Windows](#windows)
@@ -14,6 +15,15 @@ Application web React avec une API simulée via [json-server](https://github.com
 - [Problèmes fréquents](#problèmes-fréquents)
 
 ---
+
+## Stack technique
+
+- ![React](https://img.shields.io/badge/React-20232A?style=flat&logo=react&logoColor=61DAFB) — Bibliothèque JavaScript pour la construction de l'interface utilisateur
+- ![React-Bootstrap](https://img.shields.io/badge/React--Bootstrap-7952B3?style=flat&logo=bootstrap&logoColor=white) ![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white) — Mise en forme et design de l'interface
+- ![Vite](https://img.shields.io/badge/Vite-646CFF?style=flat&logo=vite&logoColor=white) — Outil de build et environnement de développement
+- ![Git](https://img.shields.io/badge/Git-F05032?style=flat&logo=git&logoColor=white) / ![GitHub](https://img.shields.io/badge/GitHub-181717?style=flat&logo=github&logoColor=white) — Gestion de versions et collaboration
+- ![Vitest](https://img.shields.io/badge/Vitest-6E9F18?style=flat&logo=vitest&logoColor=white) — Création des tests
+- ![React Hook Form](https://img.shields.io/badge/React_Hook_Form-EC5990?style=flat&logo=reacthookform&logoColor=white) — Validation de formulaires
 
 ## Prérequis
 
@@ -155,13 +165,16 @@ Le terminal affiche l'adresse du site (généralement [http://localhost:5173](ht
 
 ## Scripts disponibles
 
-| Commande | Description |
-| --- | --- |
-| `npm install` | Installe les dépendances |
-| `npm run dev` | Lance le site en mode développement |
-| `npm run build` | Génère la version de production dans `dist/` |
-| `npm run preview` | Prévisualise la version de production |
-| `npx json-server db.json --port 3000` | Lance l'API simulée sur le port 3000 |
+| Commande                              | Description                                               |
+| ------------------------------------- | --------------------------------------------------------- |
+| `npm install`                         | Installe les dépendances                                  |
+| `npm run dev`                         | Lance le site en mode développement                       |
+| `npm run build`                       | Génère la version de production dans `dist/`              |
+| `npm run preview`                     | Prévisualise la version de production                     |
+| `npx json-server db.json --port 3000` | Lance l'API simulée sur le port 3000                      |
+| `npm test`                            | Lance les tests Vitest en mode interactif                 |
+| `npm run test:run`                    | Lance une fois tous les tests Vitest                      |
+| `npm run test:coverage`               | Lance les tests Vitest et génère le rapport de couverture |
 
 ---
 
@@ -188,3 +201,8 @@ npm install
 Remove-Item -Recurse -Force node_modules, package-lock.json   # Windows PowerShell
 npm install
 ```
+
+## 🧑‍💻 Contributeurs
+
+<a href="https://github.com/carrerealexy-sketch"><img src="https://github.com/carrerealexy-sketch.png" width="60" style="border-radius:50%" alt="carrerealexy-sketch" /></a>
+<a href="https://github.com/jeyofdev"><img src="https://github.com/jeyofdev.png" width="60" style="border-radius:50%" alt="jeyofdev" /></a>

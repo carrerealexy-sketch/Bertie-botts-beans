@@ -173,6 +173,11 @@
       "name": "bobby kenedy",
       "password": "bobbykenedy",
       "id": "oCE6Gj3-NZU"
+    },
+    {
+      "name": "johnnnnnnnnnn",
+      "password": "12*56Ghj",
+      "id": "zpAtfK4Bawc"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

@@ -35,37 +35,37 @@ export const BeanForm = ({
   };
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
+  event.preventDefault();
 
-    setIsSubmitting(true);
-    setFeedback(null);
+  setIsSubmitting(true);
+  setFeedback(null);
 
-    try {
-      await onSubmit({
-        ...product,
-        name: product.name.trim(),
-        description: product.description.trim(),
-        price: Number(product.price),
-        stock: Number(product.stock),
-        image: product.image.trim(),
-      });
+  try {
+    await onSubmit({
+      ...product,
+      name: product.name.trim(),
+      description: product.description.trim(),
+      price: Number(product.price),
+      stock: Number(product.stock),
+      image: product.image.trim(),
+    });
 
-      setFeedback({
-        type: "success",
-        message: "Le produit a été enregistré.",
-      });
-    } catch (error) {
-      setFeedback({
-        type: "error",
-        message:
-          error instanceof Error
-            ? error.message
-            : "Une erreur est survenue lors de l'enregistrement.",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+    setFeedback({
+      type: "success",
+      message: "Le produit a été enregistré.",
+    });
+  } catch (error) {
+    setFeedback({
+      type: "error",
+      message:
+        error instanceof Error
+          ? error.message
+          : "Une erreur est survenue lors de l'enregistrement.",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   return (
     <form className="add-bean-form" onSubmit={handleSubmit}>
