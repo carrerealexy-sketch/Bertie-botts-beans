@@ -17,7 +17,7 @@ export const SignIn = () => {
 
   const { login, connectedUser } = use(AuthContext);
 
-  const redirectTo = location.state?.from?.pathname || ROUTES.DASHBOARD.ROOT;
+  const redirectTo = location.state?.from?.pathname || ROUTES.BEANS;
 
   const {
     register,
@@ -36,7 +36,7 @@ export const SignIn = () => {
     const redirectTo =
       location.state?.from?.pathname ||
       sessionStorage.getItem("previousPage") ||
-      ROUTES.DASHBOARD.ROOT;
+      ROUTES.BEANS;
 
     if (success) {
       navigate(redirectTo, { replace: true });

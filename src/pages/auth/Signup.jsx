@@ -41,7 +41,7 @@ export const SignUp = () => {
     });
 
     if (success) {
-      navigate(ROUTES.DASHBOARD.ROOT);
+      navigate(ROUTES.BEANS);
     } else {
       console.log("Erreur lors de l'inscription");
     }
@@ -93,7 +93,7 @@ export const SignUp = () => {
             loading={isSubmitting}
             loadingText="Création de votre compte..."
           >
-            Créer mon compte atelier
+            Créer mon compte
           </FormButton>
         </form>
 

@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 
 import { AddBeanDashboardPage } from "./pages/dashboard/beans/AddBeanDashboardPage";
 import { AddSellerDashboardPage } from "./pages/dashboard/sellers/AddSellerDashboardPage";
@@ -8,7 +8,6 @@ import { BeansPage } from "./pages/beans/BeansPage";
 import { DashboardLayout } from "./layout/DashboardLayout";
 import { EditBeanDashboardPage } from "./pages/dashboard/beans/EditBeanDashboardPage";
 import { EditSellerDashboardPage } from "./pages/dashboard/sellers/EditSellerDashboardPage";
-import { Home } from "./pages/Home";
 import { HomeDashboardPage } from "./pages/dashboard/HomeDashboardPage";
 import { NotFound } from "./pages/error/NotFound";
 import { ProtectedRoute } from "./components/ProtectedRoute";
@@ -22,7 +21,10 @@ export const App = () => {
   return (
     <>
       <Routes>
-        <Route path={ROUTES.HOME} element={<Home />} />
+        <Route
+          path={ROUTES.HOME}
+          element={<Navigate to={ROUTES.AUTH.LOGIN} replace />}
+        />
         <Route
           path={ROUTES.BEANS}
           element={

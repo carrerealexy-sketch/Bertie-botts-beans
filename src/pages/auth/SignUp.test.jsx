@@ -68,7 +68,7 @@ describe("SignUp", () => {
     ).toBeInTheDocument();
 
     expect(
-      screen.getByRole("button", { name: "Créer mon compte atelier" }),
+      screen.getByRole("button", { name: "Créer mon compte" }),
     ).toBeInTheDocument();
 
     expect(screen.getByRole("link", { name: "Se connecter" })).toHaveAttribute(
@@ -82,9 +82,7 @@ describe("SignUp", () => {
 
     renderComponent();
 
-    await user.click(
-      screen.getByRole("button", { name: "Créer mon compte atelier" }),
-    );
+    await user.click(screen.getByRole("button", { name: "Créer mon compte" }));
 
     expect(signup).not.toHaveBeenCalled();
   });
@@ -96,9 +94,7 @@ describe("SignUp", () => {
 
     await fillForm(user, "password123", "different123");
 
-    await user.click(
-      screen.getByRole("button", { name: "Créer mon compte atelier" }),
-    );
+    await user.click(screen.getByRole("button", { name: "Créer mon compte" }));
 
     expect(signup).not.toHaveBeenCalled();
   });
