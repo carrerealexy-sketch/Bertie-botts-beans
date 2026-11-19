@@ -47,7 +47,7 @@
     },
     {
       "name": "10 Beans goût Semelle",
-      "description": "Délicieux beans goût gazon",
+      "description": "Délicieux beans goût Semelle",
       "price": 1,
       "stock": 10,
       "Categorie": "Beans",
@@ -57,7 +57,7 @@
     {
       "id": "7",
       "name": "10 Beans goût Argus Rusard",
-      "description": "Délicieux beans goût gazon",
+      "description": "Délicieux beans goût Argus Rusard",
       "price": 1,
       "stock": 10,
       "Categorie": "Beans",
@@ -66,7 +66,7 @@
     {
       "id": "8",
       "name": "10 Beans goût barbe de Dumbledore",
-      "description": "Délicieux beans goût gazon",
+      "description": "Délicieux beans goût barbe de Dumbledore",
       "price": 1,
       "stock": 10,
       "Categorie": "Beans",
@@ -74,7 +74,7 @@
     },
     {
       "name": "10 Beans goût Horcrux",
-      "description": "Délicieux Beans goût Horcrux.",
+      "description": "Délicieux beans goût Horcrux.",
       "price": 1,
       "stock": 1,
       "Categorie": "Beans",
@@ -96,7 +96,7 @@
           "stock": 2
         }
       ],
-      "image": "https://placehold.co/400x250"
+      "image": "https://gbaike-image.cdn.bcebos.com/10dfa9ec8a13632721bb2a119a8fa0ec08fac7ba/10dfa9ec8a13632721bb2a119a8fa0ec08fac7ba_url?x-bce-process=image/format,f_auto/resize,m_lfit,w_400,limit_1"
     },
     {
       "id": "2",
@@ -115,7 +115,33 @@
           "stock": 2
         }
       ],
-      "image": "https://placehold.co/400x250"
+      "image": "https://gbaike-image.cdn.bcebos.com/9358d109b3de9c82d158543b9ad2970a19d8bc3ee571/9358d109b3de9c82d158543b9ad2970a19d8bc3ee571_url?x-bce-process=image/format,f_auto/resize,m_lfit,w_400,limit_1"
+    },
+    {
+      "id": "3",
+      "name": "Jordan Lee",
+      "Beans_stock": [
+        {
+          "id_beans": "2",
+          "stock": 5
+        },
+        {
+          "id_beans": "3",
+          "stock": 3
+        }
+      ],
+      "image": "https://static.wikia.nocookie.net/harrypotter/images/e/e8/Lee_Jordan.jpg/revision/latest?cb=20100121154759&path-prefix=fr"
+    },
+    {
+      "id": "4",
+      "name": "Hagrid Rubeus",
+      "Beans_stock": [
+        {
+          "id_beans": "2",
+          "stock": 1
+        }
+      ],
+      "image": "https://fr.web.img5.acsta.net/img/50/12/5012fa6eb42c46f6b0d81c0d8ca271c8.jpg"
     }
   ],
   "accounts": [
